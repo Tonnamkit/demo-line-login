@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export default function Home() {
   const [profile, setProfile] = useState<any>(null);
-  const LIFF_ID = process.env.NEXT_PUBLIC_LIFF_ID as string; // Replace with your LIFF ID
+  const LIFF_ID = process.env.NEXT_PUBLIC_LIFF_ID as string;
   useEffect(() => {
     const initializeLiff = async () => {
       try {
@@ -47,7 +47,8 @@ export default function Home() {
       <h1>Hello LINE</h1>
       {profile ? (
         <div>
-          <p>Welcome, {profile.displayName}</p>
+          <p>Welcome: {profile.displayName}</p>
+          <p>Line id: {profile.userId} </p>
           <img src={profile.pictureUrl} alt="Profile" width={100} />
           <button onClick={handleLogout}>Logout</button>
         </div>
